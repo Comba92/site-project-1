@@ -13,28 +13,31 @@
   <style>
     body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
     body {font-size:16px;}
+    .slide {display:none;}
     .w3-hover-opacity {cursor: pointer;}
   </style>
 </head>
 <body>
 <!-- Navbar (sit on top) -->
 <div id="navDesktop" class="w3-top">
-  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card w3-hide-small">
     <a href="#home" class="w3-bar-item w3-button"><b>BR</b> Architects</a>
     <!-- Float links to the right. Hide them on small screens -->
-    <div class="w3-right w3-hide-small">
+    <div class="w3-right">
       <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-th"></i>Projects</a>
       <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i>About</a>
       <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i>Contact</a>
     </div>
   </div>
 
-  <!-- Navbar on small screens -->+
-  <div id="navMobile" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="#about" class="w3-bar-item w3-button" style="width: 33%" onclick="mobileMenu()">ABOUT</a>
-    <a href="#portfolio" class="w3-bar-item w3-button" style="width: 33%" onclick="mobileMenu()">PORTFOLIO</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width: 33%" onclick="mobileMenu()">CONTACT</a>
-    <a href="#" class="w3-bar-item w3-button">SEARCH</a>
+  <!-- Navbar on small screens -->
+  <div id="navMobile" class="w3-bar w3-white w3-card w3-hide-large w3-hide-medium">
+    <a href="#home" class="w3-bar-item w3-button">Architects</a>
+    <div class="w3-right">
+    <a href="#projects" class="w3-bar-item w3-button"><i class="fa fa-th"></i> Projects</a>
+    <a href="#about" class="w3-bar-item w3-button"><i class="fa fa-user"></i> About</a>
+    <a href="#contact" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i> Contact</a>
+    </div>
   </div>
 </div>
 
@@ -42,18 +45,54 @@
 
 <!-- Header -->
 <header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
-  <img class="w3-image" src="https://www.w3schools.com/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <div class="w3-display-container">
+  <img class="w3-image slide" src="https://www.w3schools.com/w3images/architect.jpg" alt="Architecture" width="1500" height="800">
+  <img class="w3-image slide" src="https://www.w3schools.com/w3css/img_lights.jpg" width="1500" height="800">
+  <img class="w3-image slide" src="https://www.w3schools.com/w3css/img_snowtops.jpg" width="1500" height="800">
+  <img class="w3-image slide" src="https://www.w3schools.com/w3css/img_mountains.jpg" width="1500" height="800">
+  </div>
+
   <div class="w3-display-middle w3-margin-top w3-center">
     <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>BR</b></span> <span class="w3-hide-small w3-text-light-grey">Architects</span></h1>
   </div>
+
+  <button class="w3-button w3-display-left w3-black" onclick="nextImage(-1)">&#10094;</button>
+  <button class="w3-button w3-display-right w3-black" onclick="nextImage(1)">&#10095;</button>
 </header>
 
 <!-- Page content -->
-<div class="w3-content w3-padding" style="max-width:1564px">
+<div class="w3-content w3-padding " style="max-width:1564px">
+
+  <!-- Main Section -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-third w3-margin-bottom">
+      <img class="w3-round-xlarge" src="https://www.w3schools.com/w3images/team2.jpg" alt="John" style="width:100%;">
+      <h3 class="w3-center">John Doe</h3>
+      <p class="w3-opacity">CEO & Founder</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img class="w3-round-xlarge" src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:100%">
+      <h3>Jane Doe</h3>
+      <p class="w3-opacity">Architect</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+    <div class="w3-third w3-margin-bottom">
+      <img class="w3-round-xlarge" src="https://www.w3schools.com/w3images/team3.jpg" alt="Mike" style="width:100%">
+      <h3>Mike Ross</h3>
+      <p class="w3-opacity">Architect</p>
+      <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+      <p><button class="w3-button w3-light-grey w3-block">Contact</button></p>
+    </div>
+  </div>
+
+
 
   <!-- Project Section -->
   <div class="w3-container w3-padding-16" id="projects">
-    <h1 class="w3-xxxlarge w3-text-black"><b>Projects</b></h1>
+    <h1 class="w3-xxxlarge w3-text-black"><b>Projects </b><i class="fa fa-th"></i></h1>
     <hr style="width:50px;border:5px solid black" class=" w3-round">
   </div>
 
@@ -122,7 +161,7 @@
 
   <!-- About Section -->
   <div class="w3-container w3-padding-32" id="about">
-    <h1 class="w3-xxxlarge w3-text-black"><b>About</b></h1>
+    <h1 class="w3-xxxlarge w3-text-black"><b>About </b><i class="fa fa-user"></i></h1>
     <hr style="width:50px;border:5px solid black" class=" w3-round">
     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
       occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
@@ -209,13 +248,26 @@ function imageView(element) {
   captionText.innerHTML = element.alt;
 }
 
-function mobileMenu() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+
+var slideIndex = 1;
+changeImage()
+
+function nextImage(n) {
+  changeImage(slideIndex += n);
+}
+
+function changeImage() {
+  var x = document.getElementsByClassName("slide");
+
+  // Hide all images
+  for (let i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+
+  slideIndex++;
+  if (slideIndex > x.length) {slideIndex = 1}
+  x[slideIndex-1].style.display = "block";
+  setTimeout(changeImage, 5000); // Change image every 2 seconds
 }
 
 </script>
